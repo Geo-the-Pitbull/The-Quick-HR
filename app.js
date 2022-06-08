@@ -39,7 +39,7 @@ app.use(flash());
 
 app.use('/Employees', EmployeesRoute);
 //app.use('/auth', authRoute);
-//app.use('/PersonalInfo', PersonalInfoRoute);
+app.use('/PersonalInfo', PersonalInfoRoute);
 app.use('/', indexRoute);
 
 app.listen(port, () => console.log('Listening on port ${port}..'));
