@@ -38,7 +38,7 @@ app.use(session({
 app.use(flash());
 
 app.use('/Employees', EmployeesRoute);
-app.use('/auth', authRoute);
+//app.use('/auth', authRoute);
 //app.use('/PersonalInfo', PersonalInfoRoute);
 app.use('/', indexRoute);
 
