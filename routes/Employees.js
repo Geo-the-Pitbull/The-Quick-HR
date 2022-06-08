@@ -24,7 +24,8 @@ router.get('/List', function (req, res, next){
                                                 NewEmpCount: newempcount[0].value,
                                                 NewEmpAvgAgg: newempavgagg[0].value,
                                                 YougestAge: agemin[0].value,
-                                                OldestAge: agemax[0].value
+                                                OldestAge: agemax[0].value,
+                                                session: req.session
                                             });
 
                                         }

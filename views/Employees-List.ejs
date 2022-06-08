@@ -55,9 +55,9 @@ a:link {
 <body>
 
     <h3 style="text-align: center;"><a href="/"> Back to Home</a></h3>
+    <h3 style="text-align: center;"><a href="/Employees/Create"> Add a New Employee</a></h3>
 
     <h1>NEW EMPLOYEES</Nav></h1>
-    <h3 style="text-align: center;"><a href="/Employees/Create"> Add a New Employee</a></h3>
     <table>
         <thead>
             <tr>
@@ -68,13 +68,14 @@ a:link {
                 <th>Address</th>
                 <th>Telephone Number</th>
                 <th>Email Address</th>
-                <!--<th>Action</th>-->
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
-            <% if(NewEmpTable.length){
+            <% if(session.loggedin == true ){%>
+            <% if(NewEmpTable.length){%>
                
-            for(var i = 0; i< NewEmpTable.length; i++) {%>  
+            <% for(var i = 0; i< NewEmpTable.length; i++) {%>  
                 <tr>
                     <th><%= NewEmpTable[i].id %></th>
                     <td><%= NewEmpTable[i].frst_nm%></td>
@@ -83,18 +84,43 @@ a:link {
                     <td><%= NewEmpTable[i].address%></td>
                     <td><%= NewEmpTable[i].tel_no%></td>
                     <td><%= NewEmpTable[i].email_address%></td>
-                    <!--<td class="Action">
+                    <td class="Action">
                         <a href="/Employees/Edit/<%= NewEmpTable[i].id %>">Edit</a>&emsp;
                         <a href="/Employees/Delete/<%= NewEmpTable[i].id %>" style="color: red;">Delete</a>
-                    </td>-->
+                    </td>
                 </tr>
-                <% }
-                         
-                }else{ %>
-                     <tr>
-                        <td colspan="8">NO EMPLOYEE DATA!!</td>
-                     </tr>
-                <% } %>   
+            <% }%>            
+            <%}else { %>
+                <tr>
+                  <td colspan="8">NO EMPLOYEE DATA!!</td>
+                </tr>
+            <% } %>
+            <% }else { %>
+            <% if(NewEmpTable.length){%>
+               
+            <% for(var i = 0; i< NewEmpTable.length; i++) {%>  
+                <tr>
+                    <th><%= NewEmpTable[i].id %></th>
+                    <td><%= NewEmpTable[i].frst_nm%></td>
+                    <td><%= NewEmpTable[i].lst_nm%></td>
+                    <td><%= NewEmpTable[i].age%></td>
+                    <td><%= NewEmpTable[i].address%></td>
+                    <td><%= NewEmpTable[i].tel_no%></td>
+                    <td><%= NewEmpTable[i].email_address%></td>
+                    <!--
+                      <td class="Action">
+                          <a href="/Employees/Edit/<%= NewEmpTable[i].id %>">Edit</a>&emsp;
+                          <a href="/Employees/Delete/<%= NewEmpTable[i].id %>" style="color: red;">Delete</a>
+                      </td>
+                    -->
+                  </tr>
+              <% } %>
+              <%}else { %>
+                  <tr>
+                      <td colspan="8">NO EMPLOYEE DATA!!</td>
+                  </tr>
+              <% } %>
+              <% } %>
         </tbody>
     </table>
     <br>

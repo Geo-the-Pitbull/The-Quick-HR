@@ -38,10 +38,10 @@ app.use(session({
 app.use(flash());
 
 app.use('/Employees', EmployeesRoute);
-//app.use('/auth', authRoute);
+app.use('/login', authRoute);
 app.use('/PersonalInfo', PersonalInfoRoute);
 app.use('/', indexRoute);
 
-app.listen(port, () => console.log('Listening on port ${port}..'));
+app.listen(port, () => console.log(`Listening on port ${port}..`));
 
 module.exports = app;
