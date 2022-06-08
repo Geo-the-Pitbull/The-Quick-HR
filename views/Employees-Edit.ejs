@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employees List</title>
+</head>
+<style>
+    body {
+        text-align: center;
+    }
+    a:link {
+    text-decoration: none;
+    cursor: pointer;
+    color: blue;
+    }
+</style>
+<body>
+    
+    <h1>NEW EMPLOYEES EDIT</Nav></h1>
+    <a href="/Employees/List"> Back to New Employees List</a>
+    <br><br>
+
+    <form method="POST" action="/Employees/Update">
+
+        <label for="FirstName"><b>First Name:</b></label><br>
+        <Input type="text" name="FirstName" value="<%= data.frst_nm%>"></Input>
+        <br><br>
+
+        <label for="LastName"><b>Last Name:</b></label><br>
+        <Input type="text" name="LastName" value="<%= data.lst_nm%>"></Input>
+        <br><br>
+
+        <label for="Age"><b>Age:</b></label><br>
+        <Input type="number" name="Age" value="<%= data.age%>"></Input>
+        <br><br>
+
+        <label for="Address"><b>Address:</b></label><br>
+        <Input type="text" name="Address" value="<%= data.address%>"></Input>
+        <br><br>
+
+        <label for="Telphone"><b>Telephone Number:</b></label><br>
+        <Input type="tel" name="Telephone" value="<%= data.tel_no%>"></Input>
+        <br><br>
+
+        <label for="EmailAddress"><b>Email Address:</b></label><br>
+        <Input type="email" name="EmailAddress" value="<%= data.email_address%>"></Input>
+        <br><br>
+
+        <input type="hidden" name="id" value="<%= data.id%>">
+        <input type="submit" value="Update">
+
+    </form>
+
+
+</body>
+</html>
