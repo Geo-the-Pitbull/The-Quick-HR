@@ -63,54 +63,35 @@ a:link {
                 <th>N.I.S Number</th>
                 <th>Identification Type</th>
                 <th>Identification Number</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
-            <% if(NewEmpTable.length){
+            <% if(data.length){
                
-            for(var i = 0; i< NewEmpTable.length; i++) {%>  
+            for(var i = 0; i< data.length; i++) {%>  
                 <tr>
-                    <th><%= NewEmpTable[i].id %></th>
-                    <td><%= NewEmpTable[i].frst_nm%></td>
-                    <td><%= NewEmpTable[i].lst_nm%></td>
-                    <td><%= NewEmpTable[i].age%></td>
-                    <td><%= NewEmpTable[i].address%></td>
-                    <td><%= NewEmpTable[i].tel_no%></td>
-                    <td><%= NewEmpTable[i].email_address%></td>
+                    <th><%= data[i].id %></th>
+                    <td><%= data[i].employee_name%></td>
+                    <td><%= data[i].trn_no%></td>
+                    <td><%= data[i].nis_no%></td>
+                    <td><%= data[i].identification_type%></td>
+                    <td><%= data[i].identification_no%></td>
                     <td class="Action">
-                        <a href="/Employees/Edit/<%= NewEmpTable[i].id %>">Edit</a>&emsp;
-                        <a href="/Employees/Delete/<%= NewEmpTable[i].id %>" style="color: red;">Delete</a>
+                        <a href="/PersonalInfos/Edit/<%= data[i].id %>">Edit</a>&emsp;
+                        <a href="/PersonalInfos/Delete/<%= data[i].id %>" style="color: red;">Delete</a>
                     </td>
                 </tr>
                 <% }
                          
                 }else{ %>
                      <tr>
-                        <td colspan="8">NO EMPLOYEE DATA!!</td>
+                        <td colspan="8">NO EMPLOYEE PERSONAL DATA!!</td>
                      </tr>
                 <% } %>   
         </tbody>
     </table>
     <br>
-
-    <h3 style="text-align: center;">Total Number of New Employees : <br>
-      <span style="font-size: 24px;"><%= NewEmpCount%></span>
-    </h3>
-    <br>
-
-    <h3 style="text-align: center;">Average Employee Address/Location : <br>
-      <span style="font-size: 24px;"><%= NewEmpAvgAgg.toFixed(0)%></span>
-    </h3>
-    <br>
-
-    <h3 style="text-align: center;">The Youngest Age : <br>
-      <span style="font-size: 24px;"><%= YougestAge%></span>
-    </h3>
-    <br>
-
-    <h3 style="text-align: center;">The Oldest Age : <br>
-      <span style="font-size: 24px;"><%= OldestAge%></span>
-    </h3>
     
 </body>
 </html>
